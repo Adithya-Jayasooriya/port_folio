@@ -2,7 +2,7 @@
 
 <img src="images/banner.gif" alt="Thisu Adithya - Software Engineering Student" width="100%">
 
-# Thisu Adithya Weerarathna Jayasooriya
+# Thisum Adithya Weerarathna Jayasooriya
 
 **Software Engineering Student | HND in ICT, SLIATE, Sri Lanka**
 
@@ -14,7 +14,7 @@
 
 ## About me
 
-Hi, I'm **Thisu Adithya Weerarathna Jayasooriya**, a final-year **HND in Information and Communication Technology (ICT)** student at **SLIATE, Sri Lanka**, studying software engineering.
+Hi, I'm **Thisum Adithya Weerarathna Jayasooriya**, a final-year **HND in Information and Communication Technology (ICT)** student at **SLIATE, Sri Lanka**, studying software engineering.
 
 I build full-stack systems for real problems in Sri Lanka: hospitals, schools, exams and travel. I enjoy back-end logic and clean interfaces, and I'm aiming to grow into AI engineering.
 
