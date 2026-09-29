@@ -1,0 +1,70 @@
+/* ===== 1. COLOURS (change these to re-theme the whole site) ===== */
+:root{
+  --bg:#f4f6f2; --card:#ffffff; --ink:#15233b; --muted:#5b6678;
+  --line:#d8ddd3; --accent:#0e7c66; --accent-ink:#ffffff; --warm:#b4530a;
+}
+/* Dark theme: applied when <html data-theme="dark"> */
+:root[data-theme="dark"]{
+  --bg:#0f1a1a; --card:#16262a; --ink:#e8efe9; --muted:#9db0ad;
+  --line:#26393b; --accent:#3fd0a8; --accent-ink:#0b1414; --warm:#f0a35e;
+}
+
+/* ===== 2. BASE ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Figtree,system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:4.5rem 1.25rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0}
+h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1.5rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+
+/* ===== 3. HEADER ===== */
+.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font:800 1.2rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:.25rem .8rem;cursor:pointer;font:inherit}
+
+/* ===== 4. HERO ===== */
+.hero{padding-top:6rem}
+.role{color:var(--warm);font-weight:600;margin:0 0 1rem}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:800;letter-spacing:-.02em;max-width:14ch}
+.lead{max-width:56ch;color:var(--muted);font-size:1.2rem;margin:1.5rem 0 2rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:8px;background:var(--accent);
+  color:var(--accent-ink);font-weight:600;text-decoration:none;border:1px solid var(--accent)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--ink)}
+.btn:hover{opacity:.85}
+
+/* ===== 5. PROJECTS ===== */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.filters button{border:1px solid var(--line);background:none;color:var(--ink);padding:.3rem .9rem;
+  border-radius:99px;cursor:pointer;font:inherit}
+.filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.project{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.4rem;
+  display:flex;flex-direction:column;gap:.8rem}
+.project h3{font-size:1.3rem}
+.project p{margin:0;color:var(--muted);font-size:.98rem}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto}
+.tags span{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:.1rem .5rem}
+.links{display:flex;gap:1rem;font-weight:600}
+.links a{color:var(--accent)}
+
+/* ===== 6. SKILLS / ABOUT / CONTACT ===== */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skills h3{font-size:1.1rem;margin-bottom:.5rem;color:var(--warm)}
+.skills ul,.timeline{list-style:none;margin:0;padding:0}
+.skills li{padding:.2rem 0;border-bottom:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem}
+.timeline li{padding:0 0 1.2rem 1rem;border-left:3px solid var(--accent)}
+.timeline b{display:block}
+.timeline span{color:var(--muted);font-size:.95rem}
+footer{border-top:1px solid var(--line);padding-top:1.5rem;padding-bottom:2rem;color:var(--muted)}
+
+/* ===== 7. MOBILE ===== */
+@media(max-width:720px){.two{grid-template-columns:1fr}.wrap{padding:3rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

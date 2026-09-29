@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thisu Adithya | Software Engineering Student</title>
+  <meta name="description" content="Portfolio of Thisu Adithya Weerarathna Jayasooriya, HND ICT student at SLIATE, Sri Lanka. Java and PHP developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER: site name + menu + theme button -->
+  <header class="top">
+    <a class="logo" href="#home" id="logo"></a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Switch light or dark theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: filled from data.js -->
+    <section id="home" class="hero wrap">
+      <p class="role" id="role"></p>
+      <h1 id="name"></h1>
+      <p class="lead" id="tagline"></p>
+      <div class="cta">
+        <a class="btn" href="#projects">See my projects</a>
+        <a class="btn ghost" id="githubBtn" target="_blank" rel="noopener">GitHub profile</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="wrap">
+      <h2>Projects</h2>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="wrap">
+      <h2>Skills</h2>
+      <div class="skills" id="skillList"></div>
+    </section>
+
+    <!-- ABOUT + EDUCATION -->
+    <section id="about" class="wrap two">
+      <div>
+        <h2>About me</h2>
+        <p id="about-text"></p>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <ul class="timeline" id="edu"></ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="wrap">
+      <h2>Contact</h2>
+      <p>Looking for an internship or junior developer role. Send me a message.</p>
+      <div class="cta" id="contactLinks"></div>
+    </section>
+  </main>
+
+  <footer class="wrap"><small id="footer"></small></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
