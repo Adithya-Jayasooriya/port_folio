@@ -1,50 +1,50 @@
-# Portfolio: Thisu Adithya Weerarathna Jayasooriya
+<div align="center">
 
-Static website (HTML + CSS + JavaScript). No install, no database, free hosting.
+<img src="images/banner.gif" alt="Thisu Adithya - Software Engineering Student" width="100%">
 
-## 1. Files and what each does
-| File | Job |
+# Thisu Adithya Weerarathna Jayasooriya
+
+**Software Engineering Student | HND in ICT, SLIATE, Sri Lanka**
+
+[Portfolio](https://adithya-jayasooriya.github.io/port_folio/) | [GitHub](https://github.com/Adithya-Jayasooriya)
+
+</div>
+
+---
+
+## About me
+
+Hi, I'm **Thisu Adithya Weerarathna Jayasooriya**, a final-year **HND in Information and Communication Technology (ICT)** student at **SLIATE, Sri Lanka**, studying software engineering.
+
+I build full-stack systems for real problems in Sri Lanka: hospitals, schools, exams and travel. I enjoy back-end logic and clean interfaces, and I'm aiming to grow into AI engineering.
+
+**I'm looking for an internship or junior software developer role.**
+
+## Quick facts
+
+| | |
 |---|---|
-| `index.html` | Page structure (sections). Rarely changed. |
-| `css/style.css` | Colours, fonts, layout. Colours are at the top. |
-| `js/data.js` | **All your content.** Edit this for updates. |
-| `js/main.js` | Builds the page from data.js. Has theme button and project filter. |
+| **Studying** | HND in ICT, SLIATE (final year) |
+| **Languages** | PHP 8, Java, Kotlin, JavaScript, SQL |
+| **Web** | HTML5, CSS3, Bootstrap 5, jQuery / AJAX, REST APIs |
+| **Tools** | MySQL, Git / GitHub, Android Studio, XAMPP |
+| **Location** | Sri Lanka |
+| **Email** | EDIT: your-email@example.com |
+| **LinkedIn** | EDIT: your LinkedIn link |
 
-## 2. Test on your PC
-Double-click `index.html`. It opens in the browser. (Or in VS Code: install "Live Server", right-click index.html, Open with Live Server.)
+## My projects
 
-## 3. Free hosting with GitHub Pages
-You already have a repo called `port_folio`.
-1. Copy all files of this folder into that repo (`index.html` must be in the root).
-2. Commit and push (or use GitHub website: Add file > Upload files).
-3. GitHub repo > Settings > Pages > Source: "Deploy from a branch" > Branch: `main` / `/ (root)` > Save.
-4. Wait 1-2 minutes. Your site is at:
-   `https://adithya-jayasooriya.github.io/port_folio/`
-   (Tip: a repo named `adithya-jayasooriya.github.io` gives the shorter link `https://adithya-jayasooriya.github.io`.)
+| Project | What it does | Tech |
+|---|---|---|
+| [StayHub](https://github.com/Adithya-Jayasooriya/stay_hub) | Accommodation booking platform for Sri Lanka | PHP 8, MySQL, Bootstrap 5 |
+| [Hospital Clinic & Queue System](https://github.com/Adithya-Jayasooriya/Government_Hospital_Clinic_Management_-_Queue_System) | Real-time clinic queue with QR tokens and a live waiting-room display | PHP 8, MySQL, jQuery / AJAX |
+| [Smart Learning & Exam Management](https://github.com/Adithya-Jayasooriya/Smart_Learning_and_Exam_Management_System) | Android exam app, lecturer web portal and secure REST API | Kotlin, PHP, MySQL |
+| [School Management System](https://github.com/Adithya-Jayasooriya/School-Management-Systems) | School administration system | PHP, MySQL, JavaScript |
 
-## 4. How to update (simple)
-Everything is in `js/data.js`.
-- **Add a project:** copy one `{ ... }` block inside `projects`, paste after it (add a comma), change the text.
-- **Add a skill:** add `"Skill name"` inside a list in `skills`.
-- **Add email/LinkedIn:** fill `contact`. Empty items are hidden.
-- **Live demo button:** put a link in `demo`. Empty = button hidden.
-- **Change colours:** top of `css/style.css`, change the `--accent` and `--warm` values.
-- Save, then push to GitHub. Site updates in about a minute.
-- Easiest way without tools: open `data.js` on github.com, click the pencil icon, edit, click "Commit changes".
+## Contact
 
-## 5. Report (use for your HND project report)
-**Aim:** Present my skills and projects to employers in one free, easy-to-update website.
-**Tools:** HTML5, CSS3, JavaScript, Git, GitHub Pages.
-**Design decisions:**
-- Content is separated from code (data.js), so updates need no coding knowledge.
-- Responsive layout (works on phone and PC), light/dark theme, keyboard focus styles.
-- Text is inserted with `textContent`, which prevents HTML injection.
-- Static hosting: no server cost, HTTPS included, fast.
-**Testing:** open on Chrome and phone, check every link, test with browser zoom 200%.
-**Future work:** add a blog, screenshots per project, contact form (Formspree), Google Analytics.
+Open to internships and junior roles. Reach me by email, LinkedIn or through my [portfolio](https://adithya-jayasooriya.github.io/port_folio/).
 
-## 6. Improve it next
-1. Add a screenshot for each project (`images/stayhub.png`) and show it in the card.
-2. Add a short README with screenshots to each GitHub project repo. Employers open those.
-3. Upload a PDF CV to the repo and link it from the hero.
-4. Pin these 4 project repos on your GitHub profile and add a profile photo.
+---
+
+<div align="center">Thisu Adithya Weerarathna Jayasooriya | Sri Lanka</div>

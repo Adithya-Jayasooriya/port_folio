@@ -5,8 +5,8 @@
    ========================================================== */
 const DATA = {
   // ---- Basic info ----
-  shortName: "Thisu Adithya",
-  fullName: "Thisu Adithya Weerarathna Jayasooriya",
+  shortName: "Thisum Adithya",
+  fullName: "Thisum Adithya Weerarathna Jayasooriya",
   role: "HND ICT student, SLIATE, Sri Lanka",
   tagline: "Final-year software engineering student who builds full-stack systems in PHP, Java and Kotlin for real problems in Sri Lanka: hospitals, schools, exams and travel.",
   github: "https://github.com/Adithya-Jayasooriya",
@@ -16,8 +16,8 @@ const DATA = {
 
   // ---- Education ----  (add or remove lines freely)
   education: [
-    { title: "HND in Information & Communication Technology", place: "SLIATE, Sri Lanka", when: "EDIT: 2024 – 2026" }
-    // { title: "G.C.E. Advanced Level", place: "EDIT: school name", when: "EDIT: year" }
+    { title: "HND in Information & Communication Technology", place: "SLIATE, Sri Lanka", when: "EDIT: 2024 – 2027" },
+    { title: "G.C.E. Advanced Level", place: "T/SINHALA CENTRAL COLLEGE", when: "2022 - 2023" }
   ],
 
   // ---- Skills ---- (groups shown as columns)
@@ -65,8 +65,8 @@ const DATA = {
 
   // ---- Contact ---- (empty ones are hidden automatically)
   contact: {
-    email: "",      // EDIT: your email, e.g. "you@gmail.com"
-    linkedin: "",   // EDIT: your LinkedIn URL
+    email: "tawjayasooriya@gmail.com",      // EDIT: your email, e.g. "you@gmail.com"
+    linkedin: "https://www.linkedin.com/in/adithya-jayasooriya/",   // EDIT: your LinkedIn URL
     phone: ""       // EDIT: optional
   }
 };
