@@ -1,76 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thisum Adithya | Software Engineering Student</title>
-  <meta name="description" content="Portfolio of Thisum Adithya Weerarathna Jayasooriya, HND ICT student at SLIATE, Sri Lanka. Java and PHP developer.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thisum Adithya | Software Engineering Student</title>
+<meta name="description" content="Portfolio of Thisum Adithya Weerarathna Jayasooriya, HND in ICT (Software Engineering) student at SLIATE, Sri Lanka.">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. THEME: change colours here ===== */
+:root{--bg:#0A1220;--panel:#111C30;--ink:#E6EDF7;--muted:#93A3BC;--line:#22314B;--accent:#00C8FF;
+--head:'Sora',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.7 var(--head)}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1050px;margin:0 auto;padding:0 1.25rem}
+section{padding:5rem 0}
+h2{font:800 clamp(1.7rem,4vw,2.3rem)/1.2 var(--head);margin-bottom:.5rem}
+.sub{color:var(--muted);margin-bottom:2rem;max-width:60ch}
+
+/* ===== 2. NAV ===== */
+nav{position:sticky;top:0;z-index:10;background:rgba(10,18,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.7rem;padding-bottom:.7rem}
+.logo{font:800 1.1rem var(--head);color:var(--ink);border:2px solid var(--accent);border-radius:8px;padding:.1rem .6rem}
+nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--muted);font-size:.95rem}nav ul a:hover{color:var(--accent)}
+
+/* ===== 3. HERO ===== */
+.hero{display:grid;gap:2.5rem;grid-template-columns:1.2fr .8fr;align-items:center;padding-top:4rem}
+.badge{display:inline-flex;gap:.5rem;align-items:center;border:1px solid var(--line);border-radius:99px;padding:.25rem .9rem;font-size:.85rem;color:var(--muted)}
+.badge i{width:9px;height:9px;border-radius:50%;background:#2BD576}
+.hero h1{font:800 clamp(2.2rem,6vw,3.7rem)/1.1 var(--head);margin:1rem 0 .5rem}
+.type{font:500 1.25rem var(--mono);color:var(--accent);min-height:2rem}
+.type::after{content:"|";animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{color:var(--muted);margin:1rem 0;max-width:55ch}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:8px;margin:.5rem .5rem 0 0;background:var(--accent);color:#04121C;border:0;font:600 1rem var(--head);cursor:pointer}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.social a{margin-right:1rem;color:var(--muted)}
+.photo{aspect-ratio:1;border-radius:24px;border:1px solid var(--line);background:linear-gradient(135deg,#0B3A53,#111C30);display:grid;place-items:center;overflow:hidden;font:800 5rem var(--head);color:var(--accent)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.stats{display:flex;gap:1rem;margin-top:1rem}
+.stat{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
+.stat b{display:block;font:800 1.4rem var(--head);color:var(--accent)}.stat span{color:var(--muted);font-size:.85rem}
+
+/* ===== 4. ABOUT / SKILLS ===== */
+.about{display:grid;gap:2rem;grid-template-columns:1.3fr 1fr}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:.25rem .85rem;font-size:.9rem;background:var(--bg)}
+.tiles{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));list-style:none;padding:0}
+.tiles li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.9rem .5rem;text-align:center;font-size:.85rem;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.tiles img{width:38px;height:38px}
+.tiles .noicon{width:38px;height:38px;border-radius:8px;background:var(--bg);color:var(--accent);display:grid;place-items:center;font:800 1rem var(--head)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.45rem;vertical-align:middle}
+.count{color:var(--muted);font-size:.85rem;margin:-.4rem 0 1.2rem}
+.foot{display:grid;gap:2rem;grid-template-columns:1.6fr 1fr 1fr 1fr;text-align:left;padding:2.5rem 0}
+.foot h4{font:600 .9rem var(--head);margin-bottom:.6rem;color:var(--ink)}
+.foot a{display:block;color:var(--muted);font-size:.9rem;padding:.2rem 0}.foot a:hover{color:var(--accent)}
+.foot p{color:var(--muted);font-size:.9rem;max-width:34ch;margin-top:.6rem}
+.copy{border-top:1px solid var(--line);padding:1.2rem 0}
+@media(max-width:760px){.foot{grid-template-columns:1fr 1fr}}
+.msg{font-size:.9rem;min-height:1.3rem}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.filters button{background:none;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:.3rem 1rem;cursor:pointer;font:400 .9rem var(--head)}
+.filters button.on{background:var(--accent);color:#04121C;border-color:var(--accent)}
+
+/* ===== 5. PROJECTS / BLOG ===== */
+.grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:150px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(135deg,#0B3A53,#16294A)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.card .in{padding:1.2rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.card h3{font:600 1.1rem var(--head)}.card p{color:var(--muted);font-size:.93rem}
+.feat{color:var(--accent);font-size:.8rem;font-family:var(--mono)}
+.card .links{margin-top:auto;display:flex;gap:1rem}
+
+/* ===== 6. CONTACT ===== */
+.contact{display:grid;gap:2rem;grid-template-columns:1fr 1fr}
+form{display:grid;gap:.8rem}
+input,textarea{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.7rem;font:400 1rem var(--head)}
+label{font-size:.85rem;color:var(--muted)}
+.cl a{display:block;padding:.4rem 0}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media(max-width:760px){.hero,.about,.contact{grid-template-columns:1fr}.photo{max-width:280px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.type::after{animation:none}}
+</style>
 </head>
 <body>
-  <!-- HEADER: site name + menu + theme button -->
-  <header class="top">
-    <a class="logo" href="#home" id="logo"></a>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <button id="theme" aria-label="Switch light or dark theme">Theme</button>
-    </nav>
-  </header>
+<nav><div class="wrap">
+  <a class="logo" href="#home" id="logo"></a>
+  <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li id="blogNav"><a href="#blog">Blog</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
 
-  <main>
-    <!-- HERO: filled from data.js -->
-    <section id="home" class="hero wrap">
-      <p class="role" id="role"></p>
-      <h1 id="name"></h1>
-      <p class="lead" id="tagline"></p>
-      <div class="cta">
-        <a class="btn" href="#projects">See my projects</a>
-        <a class="btn ghost" id="githubBtn" target="_blank" rel="noopener">GitHub profile</a>
-      </div>
-    </section>
+<main class="wrap">
+  <section class="hero" id="home">
+    <div>
+      <span class="badge"><i></i><span id="avail"></span></span>
+      <h1 id="hello"></h1>
+      <div class="type" id="type"></div>
+      <p class="lead" id="intro"></p>
+      <a class="btn" href="#contact">Hire me</a><a class="btn ghost" href="#projects">View projects</a><a class="btn ghost" id="cv" href="#">Download CV</a>
+      <p class="social" style="margin-top:1.2rem" id="social"></p>
+    </div>
+    <div><div class="photo" id="photo"></div><div class="stats" id="stats"></div></div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="wrap">
-      <h2>Projects</h2>
-      <div class="filters" id="filters"></div>
-      <div class="grid" id="projectGrid"></div>
-    </section>
+  <section id="about">
+    <h2>About me</h2><p class="sub">The developer behind the code</p>
+    <div class="about">
+      <div id="aboutText"></div>
+      <div class="box"><h3 style="margin-bottom:.6rem">Education</h3><div id="edu"></div>
+        <h3 style="margin:1.2rem 0 .6rem">Expertise</h3><ul class="chips" id="expertise"></ul>
+        <h3 style="margin:1.2rem 0 .6rem">Currently learning</h3><ul class="chips" id="learning"></ul></div>
+    </div>
+  </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="wrap">
-      <h2>Skills</h2>
-      <div class="skills" id="skillList"></div>
-    </section>
+  <section id="skills">
+    <h2>Skills &amp; technologies</h2><p class="sub">Tools I use to build web and mobile applications.</p>
+    <div class="filters" id="filters"></div><p class="count" id="count"></p><ul class="tiles" id="skillList"></ul>
+  </section>
 
-    <!-- ABOUT + EDUCATION -->
-    <section id="about" class="wrap two">
-      <div>
-        <h2>About me</h2>
-        <p id="about-text"></p>
-      </div>
-      <div>
-        <h2>Education</h2>
-        <ul class="timeline" id="edu"></ul>
-      </div>
-    </section>
+  <section id="projects">
+    <h2>Recent projects</h2><p class="sub">A selection of my latest work from GitHub.</p>
+    <div class="grid" id="projectGrid"></div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="wrap">
-      <h2>Contact</h2>
-      <p>Looking for an internship or junior developer role. Send me a message.</p>
-      <div class="cta" id="contactLinks"></div>
-    </section>
-  </main>
+  <section id="blog"><h2>Blog</h2><p class="sub">Things I have written and learned.</p><div class="grid" id="blogGrid"></div></section>
 
-  <footer class="wrap"><small id="footer"></small></footer>
+  <section id="contact">
+    <h2>Let's connect</h2><p class="sub">Looking for an intern or junior developer? Send me a message.</p>
+    <div class="contact">
+      <div class="box cl" id="contactLinks"></div>
+      <form id="form">
+        <div><label for="n">Name</label><input id="n" required></div>
+        <div><label for="e">Your email</label><input id="e" type="email" required></div>
+        <div><label for="s">Subject</label><input id="s" required></div>
+        <div><label for="m">Message</label><textarea id="m" rows="4" required></textarea></div>
+        <input type="checkbox" id="bot" hidden tabindex="-1" autocomplete="off">
+        <button class="btn" type="submit" id="send">Send message</button><p class="msg" id="msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><div class="foot" id="foot"></div><div class="copy" id="footer"></div></div></footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+<script>
+/* =====================================================================
+   7. YOUR CONTENT: edit ONLY this block to update the whole website
+   ===================================================================== */
+const DATA = {
+  name: "Thisum Adithya Weerarathna Jayasooriya",
+  short: "Thisum Adithya",
+  logo: "TA",                                  // letters in the nav logo
+  available: "Available for internships",      // set "" to hide the badge
+  typing: ["Software Engineering Student", "Full-Stack Web Developer", "HND in ICT, SLIATE"],
+  intro: "I build web and mobile applications such as booking platforms, management systems and learning tools that solve real problems.",
+  photo: "photo.jpg",                          // your picture (file sits next to index.html)
+  location: "Sri Lanka",
+  openTo: "Open to internships & junior developer roles",
+  // Things you are still learning (shown on the About section)
+  learning: ["Machine Learning", "Cyber Security", "AI projects"],
+  email: "tawjayasooriya@gmail.com",
+  github: "https://github.com/Adithya-Jayasooriya",
+  linkedin: "https://www.linkedin.com/in/adithya-jayasooriya/",
+  cv: "cv.pdf",                                // put your CV file next to index.html
+
+  // New GitHub projects appear on the site automatically (no editing needed).
+  autoLoadRepos: true,
+  hideRepos: ["port_folio", "Adithya-Jayasooriya"],   // repo names you do NOT want shown
+
+  stats: [{v: "4+", l: "Projects on GitHub"}, {v: "HND", l: "Final year, SLIATE"}],
+
+  about: [
+    "I am a final-year HND in ICT (Software Engineering) student at SLIATE, Sri Lanka. I enjoy building complete systems from the database to the user interface.",
+    "My projects include an accommodation booking platform with QR verification, a school management system and an Android exam management app with a PHP REST API. I am looking for an internship where I can learn from a real team."
+  ],
+  education: [{title: "HND in ICT (Software Engineering)", place: "SLIATE, Sri Lanka", note: "Final year"}],
+  expertise: ["Full-stack web development", "Android app development", "REST API design", "Database design", "AI / ML (learning)", "Cyber security (learning)"],
+
+  // Skills grouped by category. The filter buttons are created automatically.
+  // To add a skill: type its name in a list. If the name is in the ICONS list (section 8) the logo appears automatically.
+  // Ready-made names you can add if you know them: Java, Python, C#, TypeScript, React, Node.js, Laravel, Express,
+  // Spring, .NET, Flutter, MongoDB, PostgreSQL, Docker, Linux, Figma, Tailwind CSS, Flask, Django, Firebase
+  skills: {
+    "Languages":     ["HTML5", "CSS3", "JavaScript", "TypeScript", "C", "Java", "C#", "Go", "PHP", "Python", "Kotlin", "SQL"],
+    "Frontend":      ["React", "Next.js", "React Native", "Expo", "Redux", "Tailwind CSS", "Bootstrap 5"],
+    "Backend":       ["Node.js", "Express", "NestJS", "Flask", "Spring", ".NET", "REST APIs"],
+    "Database":      ["MySQL", "MongoDB", "PostgreSQL", "Hibernate", "Sequelize", "Prisma"],
+    "AI / ML":       ["Pandas", "TensorFlow", "Kaggle"],
+    "DevOps & Tools":["Git", "GitHub", "Docker", "AWS", "Jenkins", "Linux", "Ubuntu", "Postman", "Android Studio", "IntelliJ IDEA", "VS Code", "Figma"]
+  },
+
+  // Free contact-form service: get a key at web3forms.com (enter tawjayasooriya@gmail.com), paste it here.
+  formKey: "",
+
+  projects: [
+    { title: "StayHub: Accommodation Booking", emoji: "🏨", featured: true, image: "",
+      text: "Booking.com-style app to browse, search and book stays in Sri Lanka, with AJAX filters, QR booking verification, email notifications and an admin panel.",
+      tech: ["PHP 8", "MySQL", "Bootstrap 5", "AJAX"], code: "https://github.com/Adithya-Jayasooriya/stay_hub", live: "" },
+    { title: "Smart Learning & Exam Management", emoji: "📱", featured: true, image: "",
+      text: "Kotlin Android app, web Lecturer Portal and secure PHP REST API with exam timers, study materials, submissions and role-based access.",
+      tech: ["Kotlin", "PHP", "MySQL", "REST API"], code: "https://github.com/Adithya-Jayasooriya/Smart_Learning_and_Exam_Management_System", live: "" },
+    { title: "School Management System", emoji: "🏫", featured: false, image: "",
+      text: "Responsive school management web app with admin, registrar office, teacher and student areas.",
+      tech: ["PHP", "MySQL", "Bootstrap 5"], code: "https://github.com/Adithya-Jayasooriya/School-Management-Systems", live: "" },
+    { title: "Personal Portfolio", emoji: "🌐", featured: false, image: "",
+      text: "This portfolio website, hosted for free and updated by editing one data block.",
+      tech: ["HTML", "CSS", "JavaScript"], code: "https://github.com/Adithya-Jayasooriya/port_folio", live: "" }
+  ],
+
+  blog: [
+    // Optional. Example: {title:"My first REST API", tag:"PHP", text:"Short summary", date:"May 2026", url:"https://medium.com/..."}
+  ]
+};
+
+/* =====================================================================
+   8. BUILD THE PAGE FROM DATA (no need to edit below)
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+document.title = DATA.short + " | " + DATA.typing[0];
+$("logo").textContent = DATA.logo;
+$("hello").textContent = "Hi, I'm " + DATA.short;
+$("intro").textContent = DATA.intro;
+$("cv").href = DATA.cv;
+if (DATA.available) $("avail").textContent = DATA.available; else $("avail").parentElement.hidden = true;
+$("footer").textContent = "© " + new Date().getFullYear() + " " + DATA.name + ". Built with HTML, CSS and JavaScript.";
+$("foot").innerHTML = `
+  <div><a class="logo" href="#home" style="display:inline-block">${esc(DATA.logo)}</a><p>${esc(DATA.typing[1])} building useful web and mobile apps. ${esc(DATA.openTo)}.</p></div>
+  <div><h4>About</h4><a href="#home">Home</a><a href="#about">About me</a><a href="#skills">Skills</a></div>
+  <div><h4>Quick links</h4><a href="#projects">Projects</a><a href="${esc(DATA.cv)}">Download CV</a></div>
+  <div><h4>Contact</h4><a href="mailto:${esc(DATA.email)}">Email me</a><a href="${esc(DATA.linkedin)}">LinkedIn</a><a href="${esc(DATA.github)}">GitHub</a></div>`;
+
+// Profile photo, or initials if no photo is set
+$("photo").innerHTML = DATA.photo ? `<img src="${esc(DATA.photo)}" alt="${esc(DATA.short)}">` : esc(DATA.logo);
+
+$("social").innerHTML = `<a href="${esc(DATA.github)}">GitHub</a><a href="${esc(DATA.linkedin)}">LinkedIn</a><a href="mailto:${esc(DATA.email)}">Email</a>`;
+$("stats").innerHTML = DATA.stats.map(s => `<div class="stat"><b>${esc(s.v)}</b><span>${esc(s.l)}</span></div>`).join("");
+$("aboutText").innerHTML = DATA.about.map(p => `<p style="margin-bottom:1rem">${esc(p)}</p>`).join("") + `<p style="color:var(--muted)">${esc(DATA.location)} • ${esc(DATA.openTo)}</p>`;
+$("edu").innerHTML = DATA.education.map(e => `<p><b>${esc(e.title)}</b><br><span style="color:var(--muted)">${esc(e.place)}, ${esc(e.note)}</span></p>`).join("");
+$("learning").innerHTML = DATA.learning.map(x => `<li>${esc(x)}</li>`).join("");
+$("expertise").innerHTML = DATA.expertise.map(x => `<li>${esc(x)}</li>`).join("");
+
+// Typing effect (shows the first phrase only if the visitor prefers less motion)
+(function typing(){
+  const el = $("type"), words = DATA.typing;
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches){ el.textContent = words[0]; return; }
+  let w = 0, i = 0, del = false;
+  (function tick(){
+    const full = words[w];
+    el.textContent = full.slice(0, i);
+    if (!del && i === full.length){ del = true; return setTimeout(tick, 1400); }
+    if (del && i === 0){ del = false; w = (w + 1) % words.length; }
+    i += del ? -1 : 1;
+    setTimeout(tick, del ? 35 : 75);
+  })();
+})();
+
+// Skills with category filter buttons
+const cats = Object.keys(DATA.skills);
+// Logo names from the free Devicon library (skill name -> icon path)
+const ICONS = {"HTML5":"html5/html5-original","CSS3":"css3/css3-original","JavaScript":"javascript/javascript-original",
+"TypeScript":"typescript/typescript-original","C":"c/c-original","Java":"java/java-original","C#":"csharp/csharp-original","Go":"go/go-original",
+"PHP":"php/php-original","Python":"python/python-original","Kotlin":"kotlin/kotlin-original","SQL":"mysql/mysql-original",
+"React":"react/react-original","Next.js":"nextjs/nextjs-original","React Native":"react/react-original","Expo":"expo/expo-original",
+"Redux":"redux/redux-original","Tailwind CSS":"tailwindcss/tailwindcss-original","Bootstrap 5":"bootstrap/bootstrap-original",
+"Node.js":"nodejs/nodejs-original","Express":"express/express-original","NestJS":"nestjs/nestjs-original","Flask":"flask/flask-original",
+"Spring":"spring/spring-original",".NET":"dotnetcore/dotnetcore-original","Laravel":"laravel/laravel-original",
+"MySQL":"mysql/mysql-original","MongoDB":"mongodb/mongodb-original","PostgreSQL":"postgresql/postgresql-original",
+"Hibernate":"hibernate/hibernate-original","Sequelize":"sequelize/sequelize-original","Prisma":"prisma/prisma-original",
+"Pandas":"pandas/pandas-original","TensorFlow":"tensorflow/tensorflow-original","Kaggle":"kaggle/kaggle-original",
+"Git":"git/git-original","GitHub":"github/github-original","Docker":"docker/docker-original","AWS":"amazonwebservices/amazonwebservices-original-wordmark",
+"Jenkins":"jenkins/jenkins-original","Linux":"linux/linux-original","Ubuntu":"ubuntu/ubuntu-plain","Postman":"postman/postman-original",
+"Android Studio":"androidstudio/androidstudio-original","IntelliJ IDEA":"intellij/intellij-original","VS Code":"vscode/vscode-original",
+"Figma":"figma/figma-original","XAMPP":"xampp/xampp-original","Flutter":"flutter/flutter-original","Django":"django/django-plain","Firebase":"firebase/firebase-plain"};
+// Shows the logo; if the logo is missing or fails to load, shows the first letter instead
+const icon = s => ICONS[s]
+  ? `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${ICONS[s]}.svg" alt="" loading="lazy" onerror="this.outerHTML='<span class=noicon>${esc(s[0])}</span>'">`
+  : `<span class="noicon">${esc(s[0])}</span>`;
+
+function showSkills(cat){
+  const list = cat === "All" ? cats.flatMap(c => DATA.skills[c]) : DATA.skills[cat];
+  $("skillList").innerHTML = list.map(s => `<li>${icon(s)}${esc(s)}</li>`).join("");
+  $("count").textContent = "Showing " + list.length + " technologies";
+  [...$("filters").children].forEach(b => b.classList.toggle("on", b.textContent === cat));
+}
+const DOTS = ["#E6EDF7", "#F5A623", "#4C8DFF", "#7ED321", "#00C8FF", "#FF7A45", "#A06BFF"];   // one colour per filter
+$("filters").innerHTML = ["All", ...cats].map((c, k) => `<button type="button"><i class="dot" style="background:${DOTS[k % DOTS.length]}"></i>${esc(c)}</button>`).join("");
+$("filters").onclick = e => { if (e.target.tagName === "BUTTON") showSkills(e.target.textContent); };
+showSkills("All");
+
+// Project cards (featured projects first)
+function projectCard(p){
+  return `<article class="card">
+    <div class="thumb">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)}">` : esc(p.emoji || "💻")}</div>
+    <div class="in">
+      ${p.featured ? '<span class="feat">Featured</span>' : ""}
+      <h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>
+      <ul class="chips">${(p.tech || []).map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+      <div class="links">${p.code ? `<a href="${esc(p.code)}">View code</a>` : ""}${p.live ? `<a href="${esc(p.live)}">Live demo</a>` : ""}</div>
+    </div></article>`;
+}
+// Your hand-written projects first (featured ones on top)
+$("projectGrid").innerHTML = [...DATA.projects].sort((a, b) => b.featured - a.featured).map(projectCard).join("");
+
+// Then add any NEW repos from your GitHub automatically
+async function loadRepos(){
+  try{
+    const user = DATA.github.split("github.com/")[1].replace(/\/$/, "");
+    const r = await fetch(`https://api.github.com/users/${user}/repos?sort=updated&per_page=20`);
+    if (!r.ok) throw new Error(r.status);
+    const known = DATA.projects.map(p => (p.code || "").toLowerCase());
+    const fresh = (await r.json())
+      .filter(x => !x.fork && !DATA.hideRepos.includes(x.name) && !known.includes(x.html_url.toLowerCase()))
+      .slice(0, 6)
+      .map(x => ({title: x.name.replace(/[-_]/g, " "), text: x.description || "New project. Description coming soon.",
+                  tech: x.language ? [x.language] : [], code: x.html_url, live: x.homepage || ""}));
+    $("projectGrid").insertAdjacentHTML("beforeend", fresh.map(projectCard).join(""));
+  }catch(e){ /* GitHub not reachable: just keep the projects above */ }
+}
+if (DATA.autoLoadRepos) loadRepos();
+
+// Blog: hidden completely when there are no posts
+if (!DATA.blog.length){ $("blog").hidden = true; $("blogNav").hidden = true; }
+else $("blogGrid").innerHTML = DATA.blog.map(b => `<article class="card"><div class="in"><span class="feat">${esc(b.tag)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p><div class="links"><span style="color:var(--muted)">${esc(b.date)}</span><a href="${esc(b.url)}">Read</a></div></div></article>`).join("");
+
+// Contact links + form (the form opens the visitor's email app: no server needed)
+$("contactLinks").innerHTML = `<h3>Get in touch</h3><a href="mailto:${esc(DATA.email)}">Email: ${esc(DATA.email)}</a><a href="${esc(DATA.linkedin)}">LinkedIn</a><a href="${esc(DATA.github)}">GitHub</a>`;
+$("form").onsubmit = async e => {
+  e.preventDefault();
+  const msg = $("msg"), name = $("n").value, from = $("e").value, subj = $("s").value, text = $("m").value;
+  // No key yet: open the visitor's email app instead
+  if (!DATA.formKey){
+    location.href = `mailto:${DATA.email}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(`From: ${name} (${from})\n\n${text}`)}`;
+    return;
+  }
+  $("send").disabled = true; msg.textContent = "Sending...";
+  try{
+    // Web3Forms sends this message straight to your inbox
+    const r = await fetch("https://api.web3forms.com/submit", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({access_key: DATA.formKey, name, email: from, subject: "Portfolio: " + subj, message: text, botcheck: $("bot").checked})
+    });
+    const j = await r.json();
+    if (!j.success) throw new Error(j.message);
+    msg.textContent = "Thank you! Your message was sent."; $("form").reset();
+  }catch(err){
+    msg.textContent = "Sorry, it failed. Please email " + DATA.email + " directly.";
+  }
+  $("send").disabled = false;
+};
+</script>
 </body>
 </html>
